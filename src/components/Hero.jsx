@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
 import profilePic from "../assets/profile.jpg"; // update path as needed
 import MobileNav from "./MobileNav"
+import resumePdf from "../assets/ResumEE.pdf";
+
 
 
 const Hero = () => {
@@ -63,7 +65,7 @@ const Hero = () => {
           View Projects
         </a>
         <a
-          href="/cv.pdf"
+          href={resumePdf} // 
           download
           className="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-white transition"
         >
