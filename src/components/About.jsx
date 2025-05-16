@@ -4,10 +4,10 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 px-6 md:px-16 bg-white text-center"
+      className="py-20 px-6 md:px-16 bg-white dark:bg-gray-900 text-center"
     >
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -17,7 +17,7 @@ const About = () => {
       </motion.h2>
 
       <motion.p
-        className="text-gray-700 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+        className="text-gray-700 dark:text-gray-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

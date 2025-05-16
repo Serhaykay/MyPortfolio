@@ -19,10 +19,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-20 px-6 md:px-16 bg-gray-50 text-center"
+      className="py-20 px-6 md:px-16 bg-gray-50 dark:bg-gray-950 text-center"
     >
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -47,7 +47,7 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <motion.span
             key={index}
-            className="bg-primary/10 text-primary border border-primary/20 rounded-full px-4 py-2 text-sm font-medium"
+            className="bg-primary/10 text-primary border border-primary/20 rounded-full px-4 py-2 text-sm font-medium dark:text-primary dark:border-primary/30 dark:bg-primary/5"
             variants={{
               hidden: { opacity: 0, y: 10 },
               visible: { opacity: 1, y: 0 },

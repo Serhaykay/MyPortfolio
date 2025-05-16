@@ -39,10 +39,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 px-6 md:px-16 bg-white text-center"
+      className="py-20 px-6 md:px-16 bg-white dark:bg-gray-950 text-center"
     >
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-gray-900 mb-10"
+        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -55,16 +55,18 @@ const Projects = () => {
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            className="rounded-xl border p-6 shadow-sm text-left bg-gray-50 hover:shadow-md transition"
+            className="rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm text-left bg-gray-50 dark:bg-gray-900 hover:shadow-md transition"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
           >
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
               {project.name}
             </h3>
-            <p className="text-sm text-gray-600 mb-4">{project.description}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+              {project.description}
+            </p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech, i) => (
                 <span
@@ -89,7 +91,7 @@ const Projects = () => {
                 <a
                   href={project.github}
                   target="_blank"
-                  className="text-sm font-medium text-gray-600 hover:underline"
+                  className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:underline"
                 >
                   GitHub
                 </a>
