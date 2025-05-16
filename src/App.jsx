@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import { ThemeToggle } from "./components/ThemeToggle";
 import MobileNav from "./components/MobileNav";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Experience from "./components/Experience";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -31,6 +32,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Experience />  
       <Contact />
     </div>
   );

@@ -23,7 +23,7 @@ const About = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        I’m a Lagos-based developer passionate about building scalable web apps
+        I’m a Nigeria-based developer passionate about building scalable web apps
         and smooth customer experiences. With over 3 years of experience in
         customer support and technical solutions, I specialize in Shopify apps,
         React, and WhatsApp automations for modern commerce.

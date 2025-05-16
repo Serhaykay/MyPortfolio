@@ -5,3 +5,34 @@
 body {
   @apply font-poppins bg-white text-gray-900;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+.tab-container {
+  position: relative;
+}
+
+.tab-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, white);
+}
+.tab-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tab-container::-webkit-scrollbar-thumb {
+  background-color: #5B3CC4; 
+  border-radius: 3px;
+}
+
