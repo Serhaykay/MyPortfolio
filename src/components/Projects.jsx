@@ -139,7 +139,7 @@ const Projects = () => {
         className="tab-container flex justify-start gap-6 mb-12 overflow-x-auto whitespace-nowrap px-4 relative focus:outline-none"
         tabIndex={0}
         onKeyDown={handleKeyDown}
-        style={{ scrollbarWidth: "thin", scrollbarColor: "#5B3CC4 transparent" }} // Firefox support
+        style={{ scrollbarWidth: "thin", scrollbarColor: "bg-primary transparent" }} // Firefox support
       >
         {projectCategories.map(({ category }, index) => (
           <button
