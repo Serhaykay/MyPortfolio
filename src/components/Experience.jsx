@@ -17,7 +17,7 @@ const experiences = [
     role: "Front-line Customer Support Specialist",
     company: "PageFly",
     startDate: "March 2023",
-    endDate: "Present",
+    endDate: "April 2025",
     description: [
       "Provided customer support for Shopify app users with a focus on quick resolution.",
       "Collaborated with development to fix bugs and improve app UX.",
@@ -41,7 +41,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-20 px-6 md:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 max-w-5xl mx-auto"
+      className="py-20 px-6 md:px-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 max-w-1xl mx-auto"
       aria-label="Work experience timeline"
     >
       <motion.h2

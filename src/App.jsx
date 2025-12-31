@@ -30,9 +30,9 @@ function App() {
       <WhatsAppButton />
       <Hero />
       <About />
-      <Skills />
-      <Projects />
       <Experience />  
+      <Skills />
+      <Projects /> 
       <Contact />
     </div>
   );
