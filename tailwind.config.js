@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#5B3CC4", // CloudHouse violet
+        primary: "#098783", // CloudHouse violet
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
