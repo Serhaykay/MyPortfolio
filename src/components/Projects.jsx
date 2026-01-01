@@ -18,24 +18,32 @@ const projectCategories = [
         description:
           "The Cloudhouse agency website with styled pages and animations using React and Tailwind.",
         tech: ["React", "Tailwind", "Framer Motion"],
-        liveLink: "https://cloudhouse-weld.vercel.app",
+        liveLink: "https://www.cloudhouse247.com",
         github: "https://github.com/Serhaykay/cloudhouse-styled-pages",
       },
       {
-        name: "StockFlow",
+        name: "Shopify Store URL Extractor Extension",
         description:
-          "Lightweight inventory & order manager tailored for WhatsApp and Instagram vendors. Works offline and automates restocks.",
-        tech: ["React Native", "Firebase", "Local Storage"],
-        liveLink: "#",
-        github: "#",
+          "A Chrome extension that helps you extract the original Shopify store URL from any website URL. This tool is particularly useful for developers, marketers, and researchers who need to identify the underlying Shopify store behind custom domains.",
+        tech: ["HTML", "CSS", "JSON", "Chrome Extensions API", "JavaScript"],
+        liveLink: "https://serhaykay.github.io/shopify-store-url-extractor/",
+        github: "https://github.com/Serhaykay/shopify-store-url-extractor",
       },
       {
-        name: "Smart Logistics",
+        name: "BuildKit",
         description:
-          "A smart logistics management system for SMEs in Nigeria — dispatch tracking, route planning, and real-time updates.",
-        tech: ["React Native", "Firebase Auth", "Framer Motion"],
-        liveLink: "#",
-        github: "#",
+          "A customizable project scaffolding tool to quickly set up new Shopify section projects with preferred frameworks and libraries.",
+        tech: ["Tawk to", "Firebase", "Supabase", "Lovable", "shadcn-ui", "Typescript", "Vite", "Tailwind CSS"],
+        liveLink: "https://buildkit.lovable.app",
+        github: "https://github.com/Serhaykay/section-suite-pro",
+      },
+      {
+        name: "Mysalarytracker",
+        description:
+          "A smart salary tracking app that helps users monitor income, expenses, and savings with detailed analytics.",
+        tech: ["Lovable", "shadcn-ui", "Typescript", "Vite", "Tailwind CSS"],
+        liveLink: "https://mysalarytracker.lovable.app/",
+        github: "https://github.com/Serhaykay/mysalarytracker/tree/main",
       },
       {
         name: "PlantIt Landing Page",

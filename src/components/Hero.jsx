@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
-import profilePic from "../assets/profile.jpg"; // update path as needed
+import profilePic from "../assets/profile6.jpg"; // update path as needed
 import MobileNav from "./MobileNav"
 import resumePdf from "../assets/ResumEE.pdf";
 
