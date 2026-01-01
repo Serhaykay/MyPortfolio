@@ -158,7 +158,7 @@ const Projects = () => {
       {/* Tabs */}
       <div
         role="tablist"
-        className="flex gap-6 mb-12 overflow-x-auto px-4"
+        className="flex gap-4 md:gap-6 mb-12 overflow-x-auto px-4"
         tabIndex={0}
         onKeyDown={handleKeyDown}
       >
@@ -167,10 +167,10 @@ const Projects = () => {
             key={category}
             ref={(el) => (tabsRef.current[index] = el)}
             onClick={() => setActiveTab(category)}
-            className={`px-6 py-2 rounded-full font-medium transition ${
+            className={`flex-shrink-0 px-6 py-2 rounded-full font-medium transition whitespace-nowrap ${
               activeTab === category
                 ? "bg-primary text-white"
-                : "bg-gray-200 dark:bg-gray-700"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
             }`}
           >
             {category}
