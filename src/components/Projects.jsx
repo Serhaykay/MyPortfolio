@@ -1,5 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
+
+// Landing page images
+import jewelryLanding from "../assets/Jewelry Landing Page.jpg";
+import landingPage1 from "../assets/Landingpage1.jpg";
+import landingPage2 from "../assets/Landingpage2.jpg";
 
 const projectCategories = [
   {
@@ -24,7 +29,7 @@ const projectCategories = [
       {
         name: "Shopify Store URL Extractor Extension",
         description:
-          "A Chrome extension that helps you extract the original Shopify store URL from any website URL. This tool is particularly useful for developers, marketers, and researchers who need to identify the underlying Shopify store behind custom domains.",
+          "A Chrome extension that helps you extract the original Shopify store URL from any website URL.",
         tech: ["HTML", "CSS", "JSON", "Chrome Extensions API", "JavaScript"],
         liveLink: "https://serhaykay.github.io/shopify-store-url-extractor/",
         github: "https://github.com/Serhaykay/shopify-store-url-extractor",
@@ -32,15 +37,24 @@ const projectCategories = [
       {
         name: "BuildKit",
         description:
-          "A customizable project scaffolding tool to quickly set up new Shopify section projects with preferred frameworks and libraries.",
-        tech: ["Tawk to", "Firebase", "Supabase", "Lovable", "shadcn-ui", "Typescript", "Vite", "Tailwind CSS"],
+          "A customizable project scaffolding tool to quickly set up new Shopify section projects.",
+        tech: [
+          "Tawk to",
+          "Firebase",
+          "Supabase",
+          "Lovable",
+          "shadcn-ui",
+          "Typescript",
+          "Vite",
+          "Tailwind CSS",
+        ],
         liveLink: "https://buildkit.lovable.app",
         github: "https://github.com/Serhaykay/section-suite-pro",
       },
       {
         name: "Mysalarytracker",
         description:
-          "A smart salary tracking app that helps users monitor income, expenses, and savings with detailed analytics.",
+          "A smart salary tracking app that helps users monitor income, expenses, and savings.",
         tech: ["Lovable", "shadcn-ui", "Typescript", "Vite", "Tailwind CSS"],
         liveLink: "https://mysalarytracker.lovable.app/",
         github: "https://github.com/Serhaykay/mysalarytracker/tree/main",
@@ -62,16 +76,17 @@ const projectCategories = [
       {
         name: "Shopify WhatsApp Widget",
         description:
-          "A Shopify app for store owners to embed WhatsApp buttons with flexible automation and multi-agent support.",
+          "A Shopify app for store owners to embed WhatsApp buttons with flexible automation.",
         tech: ["React", "Shopify CLI", "Polaris UI", "App Bridge"],
         liveLink: "#",
         github: "https://github.com/Serhaykay/cloudhouse-widget",
       },
       {
-        name: "CloudHouse App",
+        name: "Landing Pages",
         description:
-          "A customizable WhatsApp chat widget for Shopify stores. Includes admin dashboard, page-based display, business hours, and advanced targeting.",
-        tech: ["React", "Shopify App", "Tailwind", "Firebase", "MongoDB"],
+          "Custom-designed Shopify landing pages optimized for conversions, featuring modern layouts and responsive design.",
+        tech: ["Shopify", "PageFly"],
+        images: [jewelryLanding, landingPage1, landingPage2],
         liveLink: "#",
         github: "#",
       },
@@ -83,7 +98,7 @@ const projectCategories = [
       {
         name: "StockFlow",
         description:
-          "Lightweight inventory & order manager tailored for WhatsApp and Instagram vendors. Works offline and automates restocks.",
+          "Lightweight inventory & order manager tailored for WhatsApp and Instagram vendors.",
         tech: ["React Native", "Firebase", "Local Storage"],
         liveLink: "#",
         github: "#",
@@ -91,7 +106,7 @@ const projectCategories = [
       {
         name: "Smart Logistics",
         description:
-          "A smart logistics management system for SMEs in Nigeria — dispatch tracking, route planning, and real-time updates.",
+          "A smart logistics management system for SMEs — dispatch tracking and real-time updates.",
         tech: ["React Native", "Firebase Auth", "Framer Motion"],
         liveLink: "#",
         github: "#",
@@ -102,6 +117,7 @@ const projectCategories = [
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState(projectCategories[0].category);
+  const [activeImage, setActiveImage] = useState(null);
   const tabsRef = useRef([]);
 
   const activeIndex = projectCategories.findIndex(
@@ -110,15 +126,14 @@ const Projects = () => {
 
   const handleKeyDown = (e) => {
     let newIndex = activeIndex;
-
     if (e.key === "ArrowRight") {
       newIndex = (activeIndex + 1) % projectCategories.length;
       e.preventDefault();
     } else if (e.key === "ArrowLeft") {
-      newIndex = (activeIndex - 1 + projectCategories.length) % projectCategories.length;
+      newIndex =
+        (activeIndex - 1 + projectCategories.length) % projectCategories.length;
       e.preventDefault();
     }
-
     if (newIndex !== activeIndex) {
       setActiveTab(projectCategories[newIndex].category);
       tabsRef.current[newIndex]?.focus();
@@ -143,26 +158,19 @@ const Projects = () => {
       {/* Tabs */}
       <div
         role="tablist"
-        aria-label="Project categories"
-        className="tab-container flex justify-start gap-6 mb-12 overflow-x-auto whitespace-nowrap px-4 relative focus:outline-none"
+        className="flex gap-6 mb-12 overflow-x-auto px-4"
         tabIndex={0}
         onKeyDown={handleKeyDown}
-        style={{ scrollbarWidth: "thin", scrollbarColor: "bg-primary transparent" }} // Firefox support
       >
         {projectCategories.map(({ category }, index) => (
           <button
             key={category}
             ref={(el) => (tabsRef.current[index] = el)}
-            id={`tab-${index}`}
-            role="tab"
-            aria-selected={activeTab === category}
-            aria-controls={`tabpanel-${index}`}
-            tabIndex={activeTab === category ? 0 : -1}
             onClick={() => setActiveTab(category)}
-            className={`px-6 py-2 rounded-full font-medium transition whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+            className={`px-6 py-2 rounded-full font-medium transition ${
               activeTab === category
                 ? "bg-primary text-white"
-                : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                : "bg-gray-200 dark:bg-gray-700"
             }`}
           >
             {category}
@@ -170,13 +178,10 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Project cards grid */}
-      {projectCategories.map(({ category, projects }, index) => (
+      {/* Projects */}
+      {projectCategories.map(({ category, projects }) => (
         <section
           key={category}
-          id={`tabpanel-${index}`}
-          role="tabpanel"
-          aria-labelledby={`tab-${index}`}
           hidden={activeTab !== category}
           className="max-w-6xl mx-auto"
         >
@@ -184,45 +189,62 @@ const Projects = () => {
             {projects.map((project, idx) => (
               <motion.div
                 key={idx}
-                className="rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm text-left bg-gray-50 dark:bg-gray-900 hover:shadow-md transition"
+                className="rounded-xl border p-6 bg-gray-50 dark:bg-gray-900 text-left"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                {/* Images */}
+                {project.images && (
+                  <div className="flex gap-3 mb-4">
+                    {project.images.map((img, i) => (
+                      <img
+                        key={i}
+                        src={img}
+                        alt={`${project.name} screenshot ${i + 1}`}
+                        onClick={() => setActiveImage(img)}
+                        className="w-24 h-16 object-cover rounded-md cursor-pointer border hover:opacity-80"
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* Name & Description */}
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {project.name}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-sm mb-4 text-gray-600 dark:text-gray-300">
                   {project.description}
                 </p>
+
+                {/* Tech badges */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full"
+                      className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
+
+                {/* Links */}
                 <div className="flex gap-4">
-                  {project.liveLink && project.liveLink !== "#" && (
+                  {project.liveLink !== "#" && (
                     <a
                       href={project.liveLink}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-primary hover:underline"
+                      className="text-primary text-sm"
                     >
                       View Live
                     </a>
                   )}
-                  {project.github && project.github !== "#" && (
+                  {project.github !== "#" && (
                     <a
                       href={project.github}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-primary hover:underline"
+                      className="text-primary text-sm"
                     >
                       GitHub
                     </a>
@@ -233,6 +255,29 @@ const Projects = () => {
           </div>
         </section>
       ))}
+
+      {/* Fullscreen Image Lightbox */}
+      {activeImage && (
+        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
+          {/* Close Button */}
+          <button
+            onClick={() => setActiveImage(null)}
+            className="absolute top-6 right-6 text-white text-2xl font-bold bg-black/40 p-2 rounded-full hover:bg-black/60 z-50"
+          >
+            ✕
+          </button>
+
+          {/* Scrollable, wide image container */}
+          <div className="relative w-full h-full overflow-auto flex items-center justify-center">
+            <img
+              src={activeImage}
+              alt="Preview"
+              className="max-w-[350px] w-full h-full select-none rounded-xl"
+              draggable={false}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
